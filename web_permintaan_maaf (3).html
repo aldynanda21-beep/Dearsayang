@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dear Sayang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,#f7f4ef,#e9e3d8);
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    /* ===== OPEN & ANIMATION ===== */
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(245,241,234,.6)}
+      70%{box-shadow:0 0 0 18px rgba(245,241,234,0)}
+      100%{box-shadow:0 0 0 0 rgba(245,241,234,0)}
+    }
+
+    /* ===== SCROLL INDICATOR (FITUR 1) ===== */
+    .scroll-indicator{
+      position:fixed;
+      bottom:18px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:13px;
+      opacity:.7;
+      animation:scrollHint 1.8s infinite;
+      z-index:1000
+    }
+    @keyframes scrollHint{
+      0%{transform:translate(-50%,0)}
+      50%{transform:translate(-50%,6px)}
+      100%{transform:translate(-50%,0)}
+    }
+
+    /* ===== REVEAL TEXT (FITUR 2) ===== */
+    .reveal p{
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .8s ease,transform .8s ease
+    }
+    .reveal p.show{
+      opacity:1;
+      transform:none
+    }
+
+    header{
+      padding:80px 20px 40px;
+      text-align:center
+    }
+
+    section{
+      padding:60px 20px;
+      max-width:900px;
+      margin:auto
+    }
+
+    .letter{
+      background:#fff;
+      padding:35px;
+      border-radius:18px;
+      box-shadow:0 15px 30px rgba(0,0,0,.08);
+      line-height:1.9;
+      font-size:1rem
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:16px;
+      margin-top:40px
+    }
+
+    img,video{
+      width:100%;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,.15)
+    }
+
+    /* ===== VIDEO HP FRIENDLY (FITUR 5) ===== */
+    video{
+      max-height:70vh;
+      object-fit:cover
+    }
+
+    footer{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      background:#2f2a24;
+      color:#f5f1ea
+    }
+
+    @media(max-width:600px){
+      body{font-size:15px}
+      .letter{padding:28px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== OPEN SCREEN ===== -->
+<div id="openScreen" style="position:fixed;inset:0;background:linear-gradient(180deg,#2f2a24,#1f1b17);color:#f5f1ea;display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;text-align:center;padding:20px;">
+  <h1 style="font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:20px;">Dear sayang, aku harap kamu meluangkan waktu kamu untuk baca ya ❤️</h1>
+  <p style="margin-bottom:40px;">Silahkan dibuka ❤️</p>
+  <button onclick="openPage()" style="padding:14px 40px;font-size:1.1rem;border:none;border-radius:40px;background:#f5f1ea;color:#2f2a24;cursor:pointer;animation:pulse 2.5s infinite;">Open</button>
+</div>
+
+<div class="scroll-indicator">↓ geser ke bawah</div>
+
+<header>
+  <h2 style="font-family:'Playfair Display',serif;">Dari Aldynanda, Pasangan Seumur Hidupmu</h2>
+  <p>
+    Hai Sayang…<br><br>
+    Gimana kabar kamu sekarang?<br>
+    Aku harap kamu baik-baik saja, walaupun hati kamu lagi capek dan kecewa sama aku.
+  </p>
+</header>
+
+<section>
+  <div class="letter">
+    <div class="reveal">
+      <p>
+        Di sini, aku kangen kamu…<br><br>
+        Bukan cuma kangen ngobrol, wajah, suara atau tertawa kamu, tapi kangen kehadiran kamu dan kangen ngebahagiain kamu. Jujur, aku juga sedih karena aku tahu aku lagi nggak ada di posisi yang baik di hati kamu.
+      </p>
+      <p>
+        Aku paham kalau sekarang kamu butuh waktu dan ruang. Aku akan menghormati itu. Tapi aku tidak pergi, dan aku tidak menghilang. Aku gunakan waktu ini untuk berbenah atas kesalahan aku, bukan menjauh.
+      </p>
+      <p>
+        Aku akan tetap berdiri dengan komitmen aku, sambil memperbaiki diri dan membuktikan lewat tindakan, bukan sekadar janji. Aku pengen jadi orang yang lebih baik buat kamu, yang bisa bikin kamu ngerasa aman, tenang, dan dihargai.
+      </p>
+      <p>
+        Jaga diri kamu baik-baik menjelang aku pulang.<br>
+        Aku tetap di sini, dengan niat yang sama, dan perasaan yang tidak berubah. Aku akan pulang dengan tenang, untuk nemuin kamu, dimanapun kamu.
+      </p>
+      <p><strong>Ps : I Love you ❤️</strong></p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <video controls src="video1.mp4"></video>
+    <img src="foto1.jpg" />
+    <img src="foto2.jpg" />
+    <img src="foto3.jpg" />
+    <img src="foto4.jpg" />
+  </div>
+</section>
+
+<footer>
+  <div>
+    <h3>Sayang…</h3>
+    <h3>Kamu Kuusahakan Ya…</h3>
+    <p>
+      Aku tidak memaksa kamu untuk cepat kembali.<br>
+      Aku hanya ingin kamu tahu, kamu akan selalu aku usahakan.<br>
+      Dengan kesadaran, tanggung jawab, dan niat yang lebih baik dari sebelumnya.
+      <br><br>
+      Aku tahu aku masih jauh dari sempurna,
+      tapi aku ingin terus belajar menjadi lebih baik.<br>
+      Aku memilih bertahan, memperbaiki diri, dan menjaga perasaan ini dengan cara yang lebih dewasa.
+      <br><br>
+      Dengan cinta yang akan terus berkembang,<br>
+      hari ini, besok, dan seterusnya.
+      <br><br>
+      <em>Once again, I love you ❤️</em>
+    </p>
+  </div>
+</footer>
+
+<script>
+// OPEN PAGE
+function openPage(){
+  const screen=document.getElementById('openScreen');
+  screen.style.opacity='0';
+  setTimeout(()=>{
+    screen.style.display='none';
+  },800);
+}
+
+// REVEAL TEXT ON SCROLL
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll('.reveal p').forEach(p=>observer.observe(p));
+
+// HIDE SCROLL INDICATOR AFTER SCROLL
+window.addEventListener('scroll',()=>{
+  const hint=document.querySelector('.scroll-indicator');
+  if(hint) hint.style.display='none';
+},{once:true});
+</script>
+
+</body>
+</html>
